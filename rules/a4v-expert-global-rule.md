@@ -12,6 +12,12 @@ Enforce: **skill load -> API context -> file generation** for all Salesforce met
 5. **Max one clarifying question** before starting.
 6. **Do not call `execute_metadata_action` unless a skill instructs you to do so.**
 
+### MANDATORY API CONTEXT GATE — READ THIS BEFORE EVERY FILE WRITE
+
+**HARD RULE: You MUST NOT write any metadata file for a type until you have called the `salesforce-api-context` server for that specific metadata type.** This applies to EVERY type: CustomObject, CustomField, CustomTab, FlexiPage, CustomApplication, PermissionSet, ListView, ValidationRule. The only exception is Flow, which uses the metadata-experts pipeline instead.
+
+**Before writing any file, check:** Did I call `salesforce-api-context` for this metadata type in this conversation? If NO → STOP and call it now. If YES → proceed with file generation.
+
 ## Skill Selection
 
 - Search available skills and load the best-matching app-level skill first when the request asks for a Lightning app, end-to-end solution, or a business app spanning multiple metadata types.
@@ -64,6 +70,8 @@ For each metadata type in scope, whether identified by an app-level skill or req
 - Use skill constraints + API context when available.
 - Use skill constraints only when API context was unavailable after a real attempt.
 - Generate all records for this type now.
+
+
 
 **e. Checkpoint**
 - Record:
