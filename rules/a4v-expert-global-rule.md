@@ -71,8 +71,6 @@ For each metadata type in scope, whether identified by an app-level skill or req
 - Use skill constraints only when API context was unavailable after a real attempt.
 - Generate all records for this type now.
 
-
-
 **e. Checkpoint**
 - Record:
   `type=<metadata-type> selected_skill=<exact-skill-name|none> skill=complete|pending mcp=complete|pending|unavailable mcp_tools=<tool-list|none>`
