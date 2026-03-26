@@ -208,6 +208,12 @@ Execute these four steps for each metadata type, one type at a time. Complete al
 | **③ Record status** | Emit: `type=<Type> skill=complete mcp=complete\|unavailable mcp_tools=<tool-list\|none>` | Confirms both steps were attempted before any files are written and records which API context tools were used |
 | **④ Generate files** | Generate all files for this type, then checkpoint | Only after ①②③ are done. Verify, then move to the next type. |
 
+### MANDATORY API CONTEXT GATE — READ THIS BEFORE EVERY FILE WRITE
+
+**HARD RULE: You MUST NOT write any metadata file for a type until you have called the `salesforce-api-context` server for that specific metadata type.** This applies to EVERY type: CustomObject, CustomField, CustomTab, FlexiPage, CustomApplication, PermissionSet, ListView, ValidationRule. The only exception is Flow, which uses the metadata-experts pipeline instead.
+
+**Before writing any file, check:** Did I call `salesforce-api-context` for this metadata type in this conversation? If NO → STOP and call it now. If YES → proceed with file generation.
+
 **Do NOT combine ① and ② into a single action or skip ② after completing ①.** They are separate steps that serve different purposes. After loading the skill you may feel ready to generate — stop and do ② first.
 
 If `salesforce-api-context` is unavailable after a real attempt, record `mcp=unavailable` and generate using skill knowledge alone. Not attempting ② at all is a bug.
