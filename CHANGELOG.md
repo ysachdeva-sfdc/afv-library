@@ -1,3 +1,12 @@
+## [1.6.4](https://github.com/forcedotcom/afv-library/compare/1.6.3...1.6.4) (2026-03-31)
+
+
+### Bug Fixes
+
+* replace deprecated sf ui-bundle generate CLI command @W-21338965@ ([#155](https://github.com/forcedotcom/afv-library/issues/155)) ([2d9a093](https://github.com/forcedotcom/afv-library/commit/2d9a093f9cd83a12b69c0c1ab1227d32cfd7c206))
+
+
+
 ## [1.6.3](https://github.com/forcedotcom/afv-library/compare/1.6.2...1.6.3) (2026-03-31)
 
 
