@@ -1,3 +1,12 @@
+## [1.6.6](https://github.com/forcedotcom/afv-library/compare/1.6.5...1.6.6) (2026-04-02)
+
+
+### Bug Fixes
+
+* condense using-ui-bundle-salesforce-data reference into skill.md @W-21685788 ([#161](https://github.com/forcedotcom/afv-library/issues/161)) ([4ad7963](https://github.com/forcedotcom/afv-library/commit/4ad796346ec366379cc7de840c3c38e3c4521bb2))
+
+
+
 ## [1.6.5](https://github.com/forcedotcom/afv-library/compare/1.6.4...1.6.5) (2026-04-01)
 
 
