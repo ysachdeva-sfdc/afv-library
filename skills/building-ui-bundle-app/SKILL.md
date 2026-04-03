@@ -1,9 +1,9 @@
 ---
 name: building-ui-bundle-app
-description: "MUST activate when the project contains a uiBundles/*/src/ directory or sfdx-project.json and the prompt says create, build, construct, or generate a new app, site, or page from scratch — even if the prompt also describes visual styling. MUST also activate when the task spans more than one ui-bundle skill. Use this skill when building a complete app end-to-end. This is the orchestrator that coordinates scaffolding, features, data access, frontend UI, integrations, and deployment in the correct dependency order. Without it, phases execute out of order and the app breaks. Do NOT use for Lightning Experience apps with custom objects (use generating-lightning-app). Do NOT use for single-concern edits to an existing page (use building-ui-bundle-frontend)."
+description: "MUST activate when the project contains a uiBundles/*/src/ directory or sfdx-project.json and the prompt says create, build, construct, or generate a new app, site, or page from scratch — even if the prompt also describes visual styling. MUST also activate when the task spans more than one ui-bundle skill. Use this skill when building a complete app end-to-end. This is the orchestrator that coordinates scaffolding, features, data access, frontend UI, integrations, and deployment in the correct dependency order. Without it, phases execute out of order and the app breaks. Do NOT use for Lightning Experience apps with custom objects (use generating-lightning-app). Do NOT use for single-concern edits to an existing page (use editing-ui-bundle-frontend)."
 metadata:
   version: "1.0"
-  related-skills: generating-ui-bundle-metadata, generating-ui-bundle-features, using-ui-bundle-salesforce-data, building-ui-bundle-frontend, implementing-ui-bundle-agentforce-conversation-client, implementing-ui-bundle-file-upload, deploying-ui-bundle, generating-experience-react-site
+  related-skills: generating-ui-bundle-metadata, generating-ui-bundle-features, using-ui-bundle-salesforce-data, editing-ui-bundle-frontend, implementing-ui-bundle-agentforce-conversation-client, implementing-ui-bundle-file-upload, deploying-ui-bundle, generating-experience-react-site
 ---
 
 # Building a UI Bundle App
@@ -29,7 +29,7 @@ Build a complete, deployable Salesforce React UI bundle application from a natur
 
 **Do NOT use when:**
 
-- Creating a single page or component (use `building-ui-bundle-frontend`)
+- Creating a single page or component (use `editing-ui-bundle-frontend`)
 - Only installing a feature (use `generating-ui-bundle-features`)
 - Only setting up data access (use `using-ui-bundle-salesforce-data`)
 - Only deploying an existing app (use `deploying-ui-bundle`)
@@ -190,7 +190,7 @@ SKILL LOAD ORDER:
 1. generating-ui-bundle-metadata
 2. generating-ui-bundle-features (if features needed)
 3. using-ui-bundle-salesforce-data (if data access needed)
-4. building-ui-bundle-frontend
+4. editing-ui-bundle-frontend
 5a. implementing-ui-bundle-agentforce-conversation-client (if chat requested)
 5b. implementing-ui-bundle-file-upload (if file upload requested)
 6. deploying-ui-bundle
@@ -231,7 +231,7 @@ Execute each phase sequentially. Complete all steps within a phase before moving
 - 4. Checkpoint: Data layer ready -- proceed to Phase 4
 
 **Phase 4 -- UI**
-- 1. Load skill: Invoke `building-ui-bundle-frontend`
+- 1. Load skill: Invoke `editing-ui-bundle-frontend`
 - 2. Execute: Build layout, pages, components, navigation. Replace all boilerplate.
 - 3. Verify: Run lint and build -- 0 errors required
 - 4. Checkpoint: UI complete -- proceed to Phase 5
@@ -322,4 +322,4 @@ Every generated app must feel purpose-built. Replace "React App" titles, "Vite +
 
 ### 3. Design with Intent
 
-Follow the design thinking and frontend aesthetics guidance from `building-ui-bundle-frontend`. Every app should have a clear visual direction -- not generic defaults.
+Follow the design thinking and frontend aesthetics guidance from `editing-ui-bundle-frontend`. Every app should have a clear visual direction -- not generic defaults.
